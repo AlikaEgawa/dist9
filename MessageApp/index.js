@@ -80,19 +80,11 @@ app.get('/search', (req, res) => {
 });
 
 app.post('/search', (req, res) => {
-  console.log("search/post");//表示されない
   const Op = Sequelize.Op;
   Messages.findAll({
     where: {
-      // [Op.or]: {
-      //   Messages: {
-      //     message: req.body.text
-      //   }
-      // }
-      Messages: {
-        message: {
-          [Op.like]: req.body.search
-        }
+      message: {
+        [Op.regexp]: req.body.searchText
       }
     }
   })
