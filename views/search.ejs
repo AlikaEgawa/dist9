@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message App</title>
+</head>
+<body>
+    <p>
+        <a href="./">Topに戻る</a>
+    </p>
+    <h1>
+        データベースから文字列を検索する
+    </h1>
+    <form action="./search" method="post">
+        <input ntype="search" name="searchText" placeholder="検索内容を入力してください"></input>
+        <input type="submit" name="submit" value="検索">
+    </form>
+    <%for (let i = 0; i < results.length; i++) {%>
+        <p><%= results[i] %></p>
+    <%}%>
+</body>
+</html>
